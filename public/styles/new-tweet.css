@@ -1,23 +1,27 @@
-#composeTweet {
-  border-bottom: 1px solid black;
-  margin-left: 24px;
-  margin-right: 24px;
-  padding: 4px;
-}
-
-.container {
-  width: 80%;
-}
-
 .new-tweet {
   margin: 2em;
+  height: 200px;
   position: relative;
   border: 1px solid black;
   border-radius: 10px;
 
 }
 
-.counter {
+.new-tweet #composeTweet {
+  border-bottom: 1px solid black;
+  width: 340px;
+  margin-left: 24px;
+  margin-right: 24px;
+  padding: 4px;
+}
+
+.new-tweet .text {
+  width: 340px;
+  margin-left: 24px;
+  margin-right: 36px;
+}
+
+.new-tweet .counter {
   text-align: right;
   position: absolute;
   right: 0;
@@ -26,10 +30,4 @@
 
 .btn {
   margin: 24px;
-}
-
-.text {
-  width: 90%;
-  margin-left: 24px;
-  margin-right: 36px;
 }

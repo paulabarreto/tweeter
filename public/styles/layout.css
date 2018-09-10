@@ -27,7 +27,8 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
   vertical-align: middle;
   margin-top: 140px;
+  height: 500px
+
 }
