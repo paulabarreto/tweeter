@@ -8,6 +8,7 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -17,7 +18,6 @@
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
-
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -34,7 +34,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
+      <section class="new-tweet rounded-border">
         <h2 class="compose">Compose Tweet</h2>
         <form action="/tweets/" method="POST">
           <textarea class="text" name="text" placeholder="What are you humming about?"></textarea>
@@ -42,17 +42,25 @@
           <span class="counter"></span>
         </form>
       </section>
-      <article class="tweets">
-          <header class="tweetHeader">
-            <img class="image" src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png"></img>
-            <h2 class="title">Bill Fields</h2>
-            <p class="name">@billfields</p>
+
+      <section>
+        <article class="tweets rounded-border">
+          <header class="tweet-header">
+            <img class="tweet-header__avatar" src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png"></img>
+            <div class="tweet-header__title">Bill Fields</div>
+            <div class="tweet-header__handle">@billfields</div>
           </header>
-          <p class="msg">My Tweet</p>
-          <footer class="foot">
-            <p>When</p>
+          <div class="tweet-body">My Tweet</div>
+          <footer class="tweet-footer">
+            <div class="tweet-footer__timestamp">5 days ago</div>
+            <div class="tweet-footer__social-icons">
+              <i class="fab fa-font-awesome-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
           </footer>
         </article>
+      </section>
     </main>
 
   </body>

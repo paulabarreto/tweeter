@@ -29,6 +29,12 @@ body {
   margin-right: auto;
   vertical-align: middle;
   margin-top: 140px;
-  height: 500px
+  padding: 1rem;
+}
+.container > * {
+  margin-top: 1rem;
+}
 
+.container > *:first-child {
+  margin-top: 0;
 }
