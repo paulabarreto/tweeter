@@ -4,10 +4,10 @@
   position: relative;
   border: 1px solid black;
   border-radius: 10px;
-  padding: 15px
+  padding: 15px;
 }
 
-.new-tweet #composeTweet {
+.new-tweet .compose {
   border-bottom: 1px solid black;
   width: 340px;
   padding: 4px;
@@ -20,4 +20,55 @@
 .new-tweet .counter {
   margin-right: 24px;
   float: right;
+}
+
+.tweets {
+  margin: 2em;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: relative;
+}
+
+.tweets .tweetHeader {
+  background-color: #DCDCDC;
+  border-radius: 10px;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  padding: 2em;
+  height: 70px;
+}
+
+.tweets .tweetHeader .title {
+  position: absolute;
+  left: 50px;
+  top: 0;
+  padding: 1em;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 1em;
+}
+
+.tweets .tweetHeader .name {
+  position: absolute;
+  right: 0;
+}
+
+.tweets .msg {
+  position: absolute;
+  padding: 6em 1em;
+}
+
+.tweets .foot {
+  border-top: 1px solid #DCDCDC;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
 }

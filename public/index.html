@@ -35,13 +35,24 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2 id="composeTweet">Compose Tweet</h2>
+        <h2 class="compose">Compose Tweet</h2>
         <form action="/tweets/" method="POST">
           <textarea class="text" name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter"></span>
         </form>
       </section>
+      <article class="tweets">
+          <header class="tweetHeader">
+            <img class="image" src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png"></img>
+            <h2 class="title">Bill Fields</h2>
+            <p class="name">@billfields</p>
+          </header>
+          <p class="msg">My Tweet</p>
+          <footer class="foot">
+            <p>When</p>
+          </footer>
+        </article>
     </main>
 
   </body>
