@@ -1,16 +1,19 @@
 $(document).ready(function(){
+  $(".max").hide();
+  $(".empty").hide();
   $("#new-tweet").on("submit", function (event){
+    $(".max").slideUp();
+    $(".empty").slideUp();
     event.preventDefault();
     let str = $(this).serialize();
-    $.post("/tweets", str, function(){
-      if(str.length > 140){
-        alert("Tweet exceeds maximum allowed");
-      }
-      if(str === "text="){
-        alert("Please write something to tweet!");
-      } else{
+    if(str.length > 140){
+      $(".max").slideDown();
+    } else if(str === "text="){
+      $(".empty").slideDown();
+    } else{
+      $.post("/tweets", str, function(){
         location.reload();
-      }
-    });
+      });
+    }
   });
 });

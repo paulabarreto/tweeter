@@ -9,6 +9,7 @@
   position: relative;
   padding: 15px;
   font-family: Roboto-Condensed;
+  display: none;
 }
 
 .new-tweet .compose {
@@ -24,9 +25,19 @@
 }
 
 .new-tweet .counter {
-  margin-right: 24px;
+  margin-right: 48px;
   float: right;
   font-family: Roboto-Condensed;
+}
+
+.new-tweet .error-msg .max {
+  color: red;
+  margin: 0;
+}
+
+.new-tweet .error-msg .empty {
+  color: red;
+  margin: 0;
 }
 
 .tweets {
