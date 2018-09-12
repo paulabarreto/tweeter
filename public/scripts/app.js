@@ -19,7 +19,13 @@ function createTweetElement(tweet){
    $($header).append($handle);
    $($tweet).append($header);
 
-   let $body = $(`<div>${tweet.content.text}</div>`).addClass("tweet-body");
+   function escape(str) {
+     var div = document.createElement('div');
+     div.appendChild(document.createTextNode(str));
+     return div.innerHTML;
+   }
+
+   let $body = $(`<div>${escape(tweet.content.text)}</div>`).addClass("tweet-body");
    $($tweet).append($body);
 
    let $footer = $("<footer>").addClass("tweet-footer");
