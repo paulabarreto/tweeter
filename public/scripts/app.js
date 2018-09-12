@@ -62,6 +62,7 @@ $(document).ready(function(){
   //Toggle create tweet Element
   $( ".btn-compose" ).click(function() {
     $( ".new-tweet" ).toggle();
+    $( ".text" ).focus();
  });
 
 });
