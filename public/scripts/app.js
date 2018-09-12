@@ -1,4 +1,5 @@
 
+//Looping through the tweets and sending them to createTweetElement function
 function renderTweets(tweets) {
   for(let i = 0; i < tweets.length; i++){
     let $tweet = createTweetElement(tweets[i]);
@@ -6,6 +7,7 @@ function renderTweets(tweets) {
   }
 }
 
+//Create Elements to contain the tweets
 function createTweetElement(tweet){
 
    let $tweet = $("<article>").addClass("tweets rounded-border");
@@ -46,6 +48,8 @@ function createTweetElement(tweet){
  }
 
 
+
+//Ajax Request to get tweets
 $(document).ready(function(){
   function loadTweets(){
     $.ajax("/tweets", { method: 'GET' })
@@ -54,5 +58,10 @@ $(document).ready(function(){
     });
   }
   loadTweets();
+
+  //Toggle create tweet Element
+  $( ".btn-compose" ).click(function() {
+    $( ".new-tweet" ).toggle();
+ });
 
 });

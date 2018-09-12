@@ -17,8 +17,20 @@
 }
 
 #nav-bar .header {
-  vertical-align: middle;
   font-size: 2em;
   float: left;
   line-height: 2.51;
+  font-family: Roboto-Condensed;
+}
+
+#nav-bar .btn-compose {
+  float: right;
+  margin: 10px;
+  padding: 20px;
+  color: #00a087;
+  font-family: Roboto-Condensed;
+}
+
+#nav-bar .btn-compose:hover {
+  color: black;
 }
