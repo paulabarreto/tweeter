@@ -19,3 +19,9 @@ This repository is the starter code for the project: Students will fork and clon
 - Chance
 - MongoDB
 - md5
+
+## Screenshots
+
+![Tweets](/docs/Tweeter.png)
+![Compose tweet with validation (maximum length)](/docs/Tweeter-Validation1.png)
+![Compose tweet with validation (empty tweet)](/docs/Tweeter-Validation2.png)
