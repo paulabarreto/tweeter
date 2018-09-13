@@ -1,4 +1,3 @@
-
 //Looping through the tweets and sending them to createTweetElement function
 function renderTweets(tweets) {
   for(let i = 0; i < tweets.length; i++){
@@ -7,7 +6,6 @@ function renderTweets(tweets) {
   }
 }
 
-
 //Function that makes tweet message safe from xss
 function escape(str) {
   var div = document.createElement('div');
@@ -15,12 +13,15 @@ function escape(str) {
   return div.innerHTML;
 }
 
+//Finding tweet date to place in timestamp
+function findDate(createdAt){
+  var d = new Date(createdAt);
+  d = d.toDateString();
+  return d;
+}
+
 //create elements to contain the tweets
 function createTweetElement(tweet){
-
-  //Finding tweet date to place in timestamp
-  var d = new Date(tweet.created_at);
-  d = d.toDateString();
 
   let $tweet = `
     <article class="tweets rounded-border">
@@ -33,7 +34,7 @@ function createTweetElement(tweet){
         <div class="tweet-body">${escape(tweet.content.text)}</div>
       </body>
       <footer class="tweet-footer">
-        <div class="tweet-footer__timestamp">${d}</div>
+        <div class="tweet-footer__timestamp">${findDate(tweet.created_at)}</div>
         <div class="tweet-footer__social-icons">
           <i class="fab fa-font-awesome-flag"></i>
           <i class="fas fa-retweet"></i>
@@ -41,7 +42,6 @@ function createTweetElement(tweet){
       </footer>
     </article>
   `
-
    return $tweet;
  }
 
@@ -60,6 +60,6 @@ $(document).ready(function(){
   $( ".btn-compose" ).click(function() {
     $( ".new-tweet" ).toggle();
     $( ".text" ).focus();
- });
+  });
 
 });

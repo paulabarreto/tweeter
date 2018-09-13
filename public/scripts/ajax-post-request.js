@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
   //Validation messages are hidden
   $(".max").hide();
