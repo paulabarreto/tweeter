@@ -1,3 +1,4 @@
+//Counting characters
 $(document).ready(function() {
   var chars = 140;
   $ (".counter").html(140);

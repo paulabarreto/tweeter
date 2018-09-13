@@ -9,12 +9,11 @@ function renderTweets(tweets) {
 
 //Create Elements to contain the tweets
 function createTweetElement(tweet){
-
-   let $tweet = $("<article>").addClass("tweets rounded-border");
-   let $header = $("<header>").addClass("tweet-header");
-   let $avatar = $(`<img src=${tweet.user.avatars.small}></img>`).addClass("tweet-header__avatar");
-   let $title = $(`<div>${tweet.user.name}</div>`).addClass("tweet-header__title");
-   let $handle = $(`<div>${tweet.user.handle}</div>`).addClass("tweet-header__handle");
+  let $tweet = $("<article>").addClass("tweets rounded-border");
+  let $header = $("<header>").addClass("tweet-header");
+  let $avatar = $(`<img src=${tweet.user.avatars.small}></img>`).addClass("tweet-header__avatar");
+  let $title = $(`<div>${tweet.user.name}</div>`).addClass("tweet-header__title");
+  let $handle = $(`<div>${tweet.user.handle}</div>`).addClass("tweet-header__handle");
 
    $($header).append($avatar);
    $($header).append($title);
@@ -27,11 +26,15 @@ function createTweetElement(tweet){
      return div.innerHTML;
    }
 
+   //Finding tweet date to place in timestamp
+   var d = new Date(tweet.created_at);
+   d = d.toDateString();
+
    let $body = $(`<div>${escape(tweet.content.text)}</div>`).addClass("tweet-body");
    $($tweet).append($body);
 
    let $footer = $("<footer>").addClass("tweet-footer");
-   let $timeStamp = $("<div>5 days ago</div>").addClass("tweet-footer__timestamp");
+   let $timeStamp = $(`<div>${d}</div>`).addClass("tweet-footer__timestamp");
    let $socialIcons = $("<div>").addClass("tweet-footer__social-icons");
    let $flag = $("<i>").addClass("fab fa-font-awesome-flag");
    let $retweet = $("<i>").addClass("fas fa-retweet");
@@ -46,8 +49,6 @@ function createTweetElement(tweet){
 
    return $tweet;
  }
-
-
 
 //Ajax Request to get tweets
 $(document).ready(function(){
