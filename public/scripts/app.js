@@ -3,7 +3,7 @@
 function renderTweets(tweets) {
   for(let i = 0; i < tweets.length; i++){
     let $tweet = createTweetElement(tweets[i]);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   }
 }
 
@@ -54,6 +54,7 @@ $(document).ready(function(){
   function loadTweets(){
     $.ajax("/tweets", { method: 'GET' })
     .then(function (tweets){
+      console.log(tweets);
       renderTweets(tweets);
     });
   }
