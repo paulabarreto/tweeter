@@ -7,45 +7,40 @@ function renderTweets(tweets) {
   }
 }
 
-//Create Elements to contain the tweets
+
+//Function that makes tweet message safe from xss
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+//create elements to contain the tweets
 function createTweetElement(tweet){
-  let $tweet = $("<article>").addClass("tweets rounded-border");
-  let $header = $("<header>").addClass("tweet-header");
-  let $avatar = $(`<img src=${tweet.user.avatars.small}></img>`).addClass("tweet-header__avatar");
-  let $title = $(`<div>${tweet.user.name}</div>`).addClass("tweet-header__title");
-  let $handle = $(`<div>${tweet.user.handle}</div>`).addClass("tweet-header__handle");
 
-   $($header).append($avatar);
-   $($header).append($title);
-   $($header).append($handle);
-   $($tweet).append($header);
+  //Finding tweet date to place in timestamp
+  var d = new Date(tweet.created_at);
+  d = d.toDateString();
 
-   function escape(str) {
-     var div = document.createElement('div');
-     div.appendChild(document.createTextNode(str));
-     return div.innerHTML;
-   }
-
-   //Finding tweet date to place in timestamp
-   var d = new Date(tweet.created_at);
-   d = d.toDateString();
-
-   let $body = $(`<div>${escape(tweet.content.text)}</div>`).addClass("tweet-body");
-   $($tweet).append($body);
-
-   let $footer = $("<footer>").addClass("tweet-footer");
-   let $timeStamp = $(`<div>${d}</div>`).addClass("tweet-footer__timestamp");
-   let $socialIcons = $("<div>").addClass("tweet-footer__social-icons");
-   let $flag = $("<i>").addClass("fab fa-font-awesome-flag");
-   let $retweet = $("<i>").addClass("fas fa-retweet");
-   let $heart = $("<i>").addClass("fas fa-heart");
-
-   $($footer).append($timeStamp);
-   $($socialIcons).append($flag);
-   $($socialIcons).append($retweet);
-   $($socialIcons).append($heart);
-   $($footer).append($socialIcons);
-   $($tweet).append($footer);
+  let $tweet = `
+    <article class="tweets rounded-border">
+      <header class="tweet-header">
+        <img class="tweet-header__avatar" src=${tweet.user.avatars.small}></img>
+        <div class="tweet-header__title">${tweet.user.name}</div>
+        <div class="tweet-header__handle">${tweet.user.handle}</div>
+      </header>
+      <body>
+        <div class="tweet-body">${escape(tweet.content.text)}</div>
+      </body>
+      <footer class="tweet-footer">
+        <div class="tweet-footer__timestamp">${d}</div>
+        <div class="tweet-footer__social-icons">
+          <i class="fab fa-font-awesome-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i>
+      </footer>
+    </article>
+  `
 
    return $tweet;
  }

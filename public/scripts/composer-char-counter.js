@@ -11,7 +11,4 @@ $(document).ready(function() {
       $(this).siblings(".counter").css("color", "red");
     }
   });
-  //$timeStamp
-  var date = date();
-  $(".")
 });
