@@ -1,5 +1,5 @@
-//Counting characters
 $(document).ready(function() {
+  //Counting characters
   var chars = 140;
   $ (".counter").html(140);
   $(".text").keyup(function() {
@@ -11,4 +11,7 @@ $(document).ready(function() {
       $(this).siblings(".counter").css("color", "red");
     }
   });
+  //$timeStamp
+  var date = date();
+  $(".")
 });
